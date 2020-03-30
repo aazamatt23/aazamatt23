@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+#include <queue>
+
+using namespace std;
+
+queue<int> myQueue;
+string a;
+int n;
+
+int main(void){
+    while(cin >> a){
+        if (a == "push"){
+            cin >> n;
+            myQueue.push(n);
+            cout << "ok" << endl;
+        } 
+		
+		else if (a == "pop") {
+        	if(myQueue.empty()){
+                cout<<"error"<<endl;
+            }
+            
+			else{
+                cout<<myQueue.front()<<endl;
+                myQueue.pop();
+			}
+        } 
+		
+		else
+        	if (a == "front"){
+                if (myQueue.empty()){
+                    cout<<"error"<<endl;
+                }
+                    
+				else {
+                	cout << myQueue.front() << endl;
+				}
+            } 
+			
+			else
+            	if (a == "size"){
+                	cout << myQueue.size()<< endl;
+                } 
+				
+				else
+					if (a == "clear"){
+                        while(!myQueue.empty()){
+                            myQueue.pop();
+                        }
+                    
+						cout << "ok" << endl;
+                    } 
+					
+					else{
+                        cout << "bye" << endl;
+                        break;
+                    }
+    }
+    return 0;
+}
